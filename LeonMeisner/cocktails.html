@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cocktails | Leon Meisner</title>
+    <meta name="author" content="Leon Meisner">
+    <meta name="description" 
+    content="Eine Auswahl an Cocktailrezepten für warme und kalte Jaheszeiten.">
+    <meta name="keywords" 
+    content="Cocktails, Winterzauber, Rezepte, Sommerfrische, Webdesign">
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav aria-label="Hauptnavigation">
+            <a href="#home">Home</a>
+            <a href="#winterzauber">Winterzauber</a>
+            <a href="#sommerfrische">Sommerfrische</a>
+            <button id="muteButton" type="button">
+                Ton an
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Cocktail-Guide</h1>
+            <p>Entdecke ausgewählte Cocktailrezepte für warme Sommerabende und kalte Wintertage. Werde mit Hilfe der Rezepte zum besten Barkeeper jeder Jahreszeit.</p>
+
+            <figure class="home-video">
+                <video controls preload="metadata">
+                    <source src="assets/video/cocktails.mp4" type="video/mp4">
+                    <source src="assets/video/cocktails.mov" type="video/mov">
+                    <source src="assets/video/cocktails.webm" type="video/webm">
+                    Dein Browser unterstützt das Videoformat nicht.
+                </video>
+
+                <figcaption>
+                Genau so schön fühlt sich das Leben mit einem guten Cocktail an.
+                </figcaption>
+            </figure>
+            <a class="pdf-download" href="assets/pdf/cocktail.pdf"
+            download="cocktail.pdf">
+                Cocktail-Guide herunterladen
+            </a>
+        </section>
+
+        <div class="home-winter-transition"></div>
+
+        <section id="winterzauber" class="season winter">
+            <h2>Winterzauber</h2>
+            <article class="cocktail">
+                <div class="cocktail-media">
+                    <img src="assets/images/whiterussian.jpg" alt="White Russian im Glas">
+                    <canvas id="whiteRussianCanvas" width="160" height="220"></canvas>
+                    <p class="strength-label">Alkoholstärke: 4/5</p>
+                </div>
+                <div class="cocktail-content">
+                    <h3>White Russian</h3>
+
+                    <p>
+                     Ein cremiger Cocktail aus Vodka, Kaffeelikör und Sahne.
+                     Kräftig, süßlich und besonders passend für kalte, verschneite Abende, um die Seele zu wärmen.
+                    </p>
+
+                    <h4>Zutaten</h4>
+                    <ul>
+                        <li>4 cl Vodka</li>
+                        <li>2 cl Kaffeelikör</li>
+                        <li>3 cl Sahne</li>
+                        <li>Eiswürfel</li>
+                    </ul>
+
+                    <h4>Zubereitung</h4>
+                    <ol>
+                        <li>Ein Glas mit 2-3 Eiswürfeln füllen.</li>
+                        <li>Vodka und Kaffeelikör hinzugeben.</li>
+                        <li>Die Sahne vorsichtig darübergeben.</li>
+                        <li>Langsam umrühren und genießen.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="cocktail reverse">
+                <div class="cocktail-media">
+                    <img src="assets/images/gluehwein.jpg" alt="Glühwein im Becher">
+                    <canvas id="gluehweinCanvas" width="160" height="220" aria-label="Grafische Darstellung der Alkoholstärke"></canvas>
+                    <p class="strength-label">Alkoholstärke: 3/5</p>
+                </div>
+                <div class="cocktail-content">
+                    <h3>Glühwein</h3>
+
+                    <p>
+                        Ein wohlig warmes, würziges Getränk auf Rotweinbasis mit winterlichen Gewürzen und Zitrusnote. Ein Klassiker für kalte Winterabende oder einen Weihnachtsmarktspaziergang.
+                    </p>
+
+                    <h4>Zutaten</h4>
+                    <ul>
+                        <li>200 ml Rotwein</li>
+                        <li>1 Orangenscheibe</li>
+                        <li>1 Zimtstange</li>
+                        <li>2 Gewürznelken</li>
+                        <li>1-2 TL Zucker</li>
+                    </ul>
+
+                    <h4>Zubereitung</h4>
+                    <ol>
+                        <li>Rotwein in einem Topf langsam erhitzen, aber nicht kochen.</li>
+                        <li>Orange, Zimt und Nelken hinzugeben.</li>
+                        <li>Etwa 10 Minuten bei niedriger Temperatur ziehen lassen.</li>
+                        <li>Nach eigenem Geschmack mit Zucker süßen.</li>
+                        <li>Gewürze entfernen und heiß servieren.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="cocktail">
+                    <div class="cocktail-media">
+                    <img src="assets/images/irishcoffee.jpg" alt="Irish Coffee im Glas">
+                    <canvas id="irishCoffeeCanvas" width="160" height="220" aria-label="Grafische Darstellung der Alkoholstärke"></canvas>
+                    <p class="strength-label">Alkoholstärke: 2/5</p>
+                </div>
+                <div class="cocktail-content">
+                    <h3>Irish Coffee</h3>
+
+                    <p>
+                        Eine Kombination aus heißem Kaffee, Irish Whiskey und leicht geschlagener Sahne. Kräftig, wärmend und mit starken Kaffee- und Whiskeynoten.
+                    </p>
+
+                    <h4>Zutaten</h4>
+                    <ul>
+                        <li>4 cl Irish Whiskey</li>
+                        <li>120 ml heißer Kaffee</li>
+                        <li>2 TL brauner Zucker</li>
+                        <li>Leicht geschlagene Sahne</li>
+                    </ul>
+
+                    <h4>Zubereitung</h4>
+                    <ol>
+                        <li>Den braunen Zucker in ein hitzebeständiges Glas geben.</li>
+                        <li>Heißen Kaffee hinzufügen und den Zucker darin auflösen.</li>
+                        <li>Irish Whiskey damit verrühren.</li>
+                        <li>Zum Schluss die Sahne vorsichtig auf den Kaffee geben und genießen.</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+
+            <div class="season-transition" aria-hidden="true"></div>
+
+        <section id="sommerfrische" class="season summer">
+            <h2>Sommerfrische</h2>
+                <article class="cocktail reverse">
+                <div class="cocktail-media">
+                    <img src="assets/images/mojito.jpg" alt="Mojito im Glas">
+                    <canvas id="mojitoCanvas" width="160" height="220" aria-label="Grafische Darstellung der Alkoholstärke"></canvas>
+                    <p class="strength-label">Alkoholstärke: 3/5</p>
+                </div>
+                <div class="cocktail-content">
+                    <h3>Mojito</h3>
+
+                    <p>
+                        Ein fantastischer Cocktail aus Rum, Limette und Minze. Die perfekte Kombination aus säuerlich und abenteuerlich für warme Sommertage.
+                    </p>
+
+                    <h4>Zutaten</h4>
+                    <ul>
+                        <li>5 cl weißer Rum</li>
+                        <li>2,5 cl Limettensaft</li>
+                        <li>2 TL Rohrzucker</li>
+                        <li>6-8 Minzblätter</li>
+                        <li>Sodawasser</li>
+                        <li>Crushed Ice</li>
+                    </ul>
+
+                    <h4>Zubereitung</h4>
+                    <ol>
+                        <li>Limettensaft und Rohrzucker in ein Glas geben.</li>
+                        <li>Minze hinzufügen und vorsichtig andrücken.</li>
+                        <li>Das Glas mit Crushed Ice füllen.</li>
+                        <li>Rum hinzugeben und mit Sodawasser auffüllen.</li>
+                        <li>Vorsichtig umrühren und mit Minze garnieren.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="cocktail" >
+                <div class="cocktail-media">
+                    <img src="assets/images/pinacolada.jpg" alt="Pina Colada im Glas">
+                    <canvas id="pinaColadaCanvas" width="160" height="220" aria-label="Grafische Darstellung der Alkoholstärke"></canvas>
+                    <p class="strength-label">Alkoholstärke: 3/5</p>
+                </div>
+                <div class="cocktail-content">
+                    <h3>Pina Colada</h3>
+
+                    <p>
+                        Ein cremiger tropischer Cocktail mit Rum, Kokos und Ananas. Süß, fruchtig und schreiend nach einem Strandtag mit abschließender Party in einem Beachclub.
+                    </p>
+
+                    <h4>Zutaten</h4>
+                    <ul>
+                        <li>5 cl weißer Rum</li>
+                        <li>3 cl Kokoscreme</li>
+                        <li>8 cl Ananassaft</li>
+                        <li>Eiswürfel oder Crushed Ice</li>
+                    </ul>
+
+                    <h4>Zubereitung</h4>
+                    <ol>
+                        <li>Rum, Kokoscreme und Ananassaft in einen Mixer geben.</li>
+                        <li>Eis hinzufügen.</li>
+                        <li>Alles cremig mixen.</li>
+                        <li>Ins Glas füllen, mit Ananas garnieren und die Sonnenbrille anziehen.</li>
+                    </ol>
+                </div>
+            </article>
+
+            <article class="cocktail reverse">
+                <div class="cocktail-media">
+                    <img src="assets/images/cubalibre.jpg" alt="Cuba Libre im Glas">
+                    <canvas id="cubaLibreCanvas" width="160" height="220" aria-label="Grafische Darstellung der Alkoholstärke"></canvas>
+                    <p class="strength-label">Alkoholstärke: 3/5</p>
+                </div>
+                <div class="cocktail-content">
+                    <h3>Cuba Libre</h3>
+
+                    <p>
+                        Ein unkomplizierter Longdrink aus Rum, Cola und Limette. Würzig, säuerlich und schnell Zubereitet. Ein Drink der wahrlich "Freiheit" ruft.
+                    </p>
+
+                    <h4>Zutaten</h4>
+                    <ul>
+                        <li>5 cl Rum</li>
+                        <li>10-12 cl Cola</li>
+                        <li>1 cl Limettensaft</li>
+                        <li>Eiswürfel</li>
+                        <li>1 Limettenspalte</li>
+                    </ul>
+
+                    <h4>Zubereitung</h4>
+                    <ol>
+                        <li>Ein Glas mit 2-3 Eiswürfeln füllen.</li>
+                        <li>Rum und Limettensaft hinzugeben.</li>
+                        <li>Mit Cola auffüllen und leicht umrühren.</li>
+                        <li>Mit einer Limettenspalte garnieren.</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Leon Meisner - Webdesign und Standards</p>
+    </footer>
+
+    <audio id="navSound" preload="auto">
+        <source src="assets/audio/navsound.m4a" type="audio/mp4">
+        <source src="assets/audio/navsound.mp3" type="audio/mpeg">
+        <source src="assets/audio/navsound.ogg" type="audio/ogg">
+        Dein Browser unterstützt das Audioformat nicht.
+    </audio>
+    
+    <script src="js/canvas.js"></script>
+    <script src="js/audio.js"></script>
+
+</body>
+
+</html>

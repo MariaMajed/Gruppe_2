@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<!-- metadata -->
+
+<head>
+    <title>Sushi-Seite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sushi">
+    <meta name="keywords" content="Sushi, Maki, Nigiri, Rezept">
+    <meta name="author" content="Maria Majed">
+    <meta name="robots" content="no-index">
+    <link href="css/sushi.css" rel="stylesheet" type="text/css">
+</head>
+
+<!-- visible content -->
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a class="nav-logo" href="#home" aria-label="Zur Startseite">
+                        <img src="assets/svg/sushi.svg" alt="Lachs-Maki">
+                    </a>
+                </li>
+                <li><a href="#home">Start</a></li>
+                <li><a href="#sushi">Sushi</a></li>
+                <li><a href="#sushisorten">Sushisorten</a></li>
+                <li><a href="#zubereitung">Zubereitung</a></li>
+                <li><a href="#sushi-maker">Sushi-Maker</a></li>
+                <li>
+                    <a class="pdf-download" href="assets/pdf/The_Art_of_Sushi.pdf" download="The_Art_of_Sushi.pdf">
+                        PDF
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div id="home-text">
+                <h1>The Art of </h1>
+                <h1>Sushi</h1>
+                <p>
+                    Entdecken Sie die Kunst, Geschichte und Vielfalt des Sushis.
+                </p>
+            </div>
+
+        </section>
+
+        <section id="sushi" class="sushi-section">
+            <div class="sushi-image reveal reveal-left">
+                <figure>
+                    <img src="assets/images/Mekong_Delta.jpeg" alt="Mekong Delta">
+                </figure>
+            </div>
+            <div class="sushi-text">
+                <h2>Sushi</h2>
+                <h3>Die Ursprünge</h3>
+                <p>
+                    Sushi ist ein japanisches Gericht, dessen Ursprung jedoch in Südostasien, genauer
+                    im Mekong-Delta, liegt. Dort wurde Fisch in fermentiertem Reis eingelegt, um ihn länger haltbar
+                    zu machen. Der Reis wurde ursprünglich vor dem Verzehr entfernt.
+                </p>
+                <h3>Der Weg nach Japan</h3>
+                <p>
+                    Diese Technik verbreitete sich über China bis nach Japan. Im 8. Jahrhundert wurde sie dort erstmals
+                    als Narezushi erwähnt. Fisch und Reis wurden zunächst gemeinsam verzehrt.
+                </p>
+                <h3>Sushi, wie wir es heute kennen</h3>
+                <p>
+                    Gegen Ende der Muromachi-Zeit wurde der Fermentierungsprozess durch die Zugabe von
+                    Reisessig beschleunigt. Im 18. Jahrhundert entwickelte sich in Edo, dem heutigen Tokio,
+                    schließlich das Nigiri-Sushi. Frischer Meeresfisch und die Nähe zum Hafen prägten dabei
+                    die moderne Form des Sushi.
+                </p>
+            </div>
+        </section>
+
+        <section id="sushisorten" class="sushi-section">
+            <div class="sushititle">
+                <h2>Sushisorten</h2>
+            </div>
+            <div id="sorten-container">
+                <div class="sortenbox">
+                    <h3>Maki</h3>
+                    <div class="sortenbox-inner">
+                        <figure>
+                            <img src="assets/images/Maki_Sushi.jpg" alt="Maki Bild">
+                        </figure>
+                        <div class="sorten-content">
+                            <dl>
+                                <dt>Hoso-Maki</dt>
+                                <dd>
+                                    Dünne Sushi-Rollen, die meist nur eine Füllung
+                                    enthalten und außen von Nori umwickelt sind.
+                                </dd>
+                                <dt>Futo-Maki</dt>
+                                <dd>
+                                    Dicke, große Sushi-Rollen mit mehreren verschiedenen Füllungen,
+                                    ebenfalls außen mit Nori.
+                                </dd>
+                                <dt>Ura-Maki</dt>
+                                <dd>
+                                    „Inside-Out“-Rollen, bei denen der Reis außen und
+                                    das Nori mit der Füllung innen liegt.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="sortenbox">
+                    <h3>Nigiri</h3>
+                    <div class="sortenbox-inner">
+                        <figure>
+                            <img src="assets/images/nigiri.jpg" alt="Nigiri Bild">
+                        </figure>
+                        <div class="sorten-content">
+                            <ul>
+                                <li>Sind oval geformte Reisbällchen</li>
+                                <li>Mit einem Belag aus rohem oder leicht gegartem Fisch, Meeresfrüchten oder Omelett
+                                </li>
+                                <li>Manchmal mit Nori fixiert</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="sortenbox">
+                    <h3>Sushivarianten</h3>
+                    <div class="sortenbox-inner">
+                        <figure>
+                            <img src="assets/images/temaki.jpg" alt="Temaki Bild">
+                        </figure>
+                        <div class="sorten-content">
+                            <dl>
+                                <dt>Sashimi</dt>
+                                <dd>
+                                    Dünne Scheiben aus rohem Fisch oder Meeresfrüchten,
+                                    die ohne Reis serviert werden.
+                                </dd>
+                                <dt>Temaki</dt>
+                                <dd>
+                                    Handgerolltes Sushi in Form einer Tüte, gefüllt mit Reis,
+                                    Fisch und weiteren Zutaten.
+                                </dd>
+                                <dt>Gunkan-Maki</dt>
+                                <dd>
+                                    Oval geformtes Sushi, bei dem Reis von einem Nori-Streifen
+                                    umschlossen und oben mit Zutaten wie Fischrogen belegt wird.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="zubereitung" class="sushi-section">
+            <div class="sushititle">
+                <h2>Zubereitung</h2>
+            </div>
+            <div class="zubereitung-sektion">
+                <figure>
+                    <video controls muted width="800">
+                        <source src="assets/video/sushi-video.mp4" type="video/mp4">
+                        <source src="assets/video/sushi-video.ogg" type="video/ogg">
+                        <source src="assets/video/sushi-video.webm" type="video/webm">
+                    </video>
+                </figure>
+                <p>
+                    Die Zubereitung von Sushi erfordert Präzision, Geduld und die richtigen Zutaten.
+                    In diesem Abschnitt zeigen wir Ihnen Schritt für Schritt, wie Sie Sushi zu Hause zubereiten können.
+                </p>
+            </div>
+            <div class="zubereitung-sektion">
+                <article>
+                    <div id="zutaten-bereich">
+                        <h3>Zutaten</h3>
+                        <ul>
+                            <li>Sushi-Reis</li>
+                            <li>Reisessig</li>
+                            <li>Nori-Blätter</li>
+                        </ul>
+                        <h4>Füllungen</h4>
+                        <ul>
+                            <li>Fisch oder Meeresfrüchte</li>
+                            <li>Gemüse</li>
+                        </ul>
+                        <h4>Beilagen</h4>
+                        <ul>
+                            <li>Sojasauce</li>
+                            <li>Wasabi</li>
+                        </ul>
+                        <h3>Werkzeuge</h3>
+                        <ul>
+                            <li>Bambusmatte</li>
+                            <li>Scharfes Messer</li>
+                            <li>Reiskocher oder Topf</li>
+                            <li>Schüssel mit Wasser</li>
+                        </ul>
+                    </div>
+                    <div id="schritte-bereich">
+                        <h3>Schritt-für-Schritt-Anleitung</h3>
+                        <ol>
+                            <li>
+                                Sushi-Reis gründlich waschen und nach Packungsanleitung kochen.
+                                Anschließend mit Reisessig würzen und vollständig abkühlen lassen.
+                            </li>
+                            <li>
+                                Während der Reis abkühlt, Fisch und Gemüse in dünne, gleichmäßige Streifen schneiden.
+                            </li>
+                            <li>
+                                Ein Noriblatt auf eine Bambusmatte legen. Den abgekühlten Reis gleichmäßig
+                                darauf verteilen und dabei am oberen Rand etwas Platz lassen.
+                            </li>
+                            <li>
+                                Fisch und Gemüse waagerecht in der Mitte des Reises verteilen. Nicht zu viel Füllung
+                                verwenden, damit sich die Rolle gut schließen lässt.
+                            </li>
+                            <li>
+                                Die Bambusmatte langsam nach vorne rollen und dabei leichten Druck ausüben. Die Rolle
+                                anschließend vorsichtig festdrücken und verschließen.
+                            </li>
+                            <li>
+                                Die Rolle mit einem scharfen, leicht angefeuchteten Messer in gleichmäßige Stücke
+                                schneiden.
+                                Anschließend direkt servieren.
+                            </li>
+                        </ol>
+                        <h3>Sushi-ASMR</h3>
+                        <p>Sushi schneiden</p>
+                        <figure>
+                            <audio controls>
+                                <source src="assets/audio/sushi-asmr.mp3" type="audio/mpeg">
+                                <source src="assets/audio/sushi-asmr.mp4" type="audio/mp4">
+                                <source src="assets/audio/sushi-asmr.ogg" type="audio/ogg">
+                            </audio>
+                        </figure>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <section id="sushi-maker" class="sushi-section">
+            <h2>Sushi-Maker</h2>
+
+            <p>
+                Stelle deinen eigenen Sushi-Teller zusammen!
+                Klicke auf den Button, um Sushi hinzuzufügen.
+            </p>
+
+            <canvas id="sushiCanvas" width="300" height="300">
+                Ihr Browser unterstützt kein Canvas.
+            </canvas>
+
+            <button type="button" id="sushiButton">
+                Sushi hinzufügen
+            </button>
+
+            <button type="button" id="resetButton">
+                Teller leeren
+            </button>
+
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; Maria Majed 2026 - The Art of Sushi</p>
+    </footer>
+
+    <script src="js/sushi.js"></script>
+    <script src="js/canvas.js"></script>
+</body>
+
+</html>

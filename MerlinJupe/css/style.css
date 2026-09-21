@@ -1,0 +1,376 @@
+/* Grundlegende Einstellungen */
+:root {
+    /* Leitfarben */
+    --color-primary: #d62828;
+    --color-accent: #ff4c3b;
+    --color-blue: #0077b6;
+
+    /* Text */
+    --color-text: #222222;
+    --color-dark: #111111;
+    --color-gray-dark: #333333;
+    --color-gray: #666666;
+
+    /* Hintergründe */
+    --color-white: #ffffff;
+    --color-section-light: #f5f5f5;
+
+    /* Rahmen */
+    --color-border: #cccccc;
+    --color-border-light: #dddddd;
+
+    /* Barrierefreiheit */
+    --color-focus: #005fcc;
+
+    /* Hero Overlay */
+    --overlay-dark: rgba(0, 0, 0, 0.75);
+    --overlay-light: rgba(0, 0, 0, 0.20);
+
+    /* Schatten */
+    --color-shadow: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 4.5rem 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* Barrierefreiheit */
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-link:focus {
+    left: 20px;
+    top: 20px;
+    padding: 10px;
+    background-color: var(--color-white);
+    color: var(--color-focus);
+    z-index: 100;
+}
+
+a:focus,
+button:focus {
+    outline: 3px solid #005fcc;
+    outline-offset: 3px;
+}
+
+
+/* Header */
+
+header {
+    border-bottom: 1px solid #dddddd;
+}
+
+.header-content {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+nav ul {
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--color-accent);
+}
+
+
+/* Hero */
+
+.hero {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 100%; /* Video css styles überschreiben */
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--overlay-dark),
+        var(--overlay-light)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: 2px solid var(--color-dark);
+    text-decoration: none;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+
+/* Inhalte */
+
+.section-light {
+    background-color: var(--color-section-light);
+}
+
+#disciplines {
+    text-align: center;
+}
+
+.disciplines {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    margin-top: 30px;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* Karten */
+
+.disciplines li {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--color-white);
+    box-shadow: 0 4px 15px var(--color-shadow);
+
+    transition: transform 0.3s ease;
+}
+
+.disciplines li:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Bilder */
+
+.disciplines figure {
+    margin: 0;
+}
+
+.disciplines img {
+    display: block;
+
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+}
+
+
+/* Beschreibung */
+
+.disciplines figcaption {
+    padding: 15px 18px 5px;
+
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+
+/* Überschrift + Distanz */
+
+.disciplines h3 {
+    margin: 5px 18px 20px;
+
+    font-size: 22px;
+}
+
+.disciplines h3 span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--color-primary);
+    font-size: 16px;
+}
+
+
+video {
+    max-width: 600px;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+audio {
+    width: 100%;
+}
+
+
+/* SVG */
+
+.svg-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+svg {
+    width: 100%;
+    height: auto;
+}
+
+.svg-line {
+    stroke: var(--color-border);
+    stroke-width: 5;
+}
+
+.svg-swim {
+    fill: var(--color-blue);
+}
+
+.svg-bike {
+    fill: var(--color-gray-dark);
+}
+
+.svg-run {
+    fill: var(--color-primary);
+}
+
+svg text {
+    fill: #ffffff;
+    font-size: 16px;
+    text-anchor: middle;
+}
+
+
+/* Canvas */
+
+canvas {
+    display: block;
+    width: 100%;
+    margin: 25px 0;
+    border-radius: 10px;
+    border: var(--color-border);
+    background-color: var(--color-border-light);
+}
+
+.race-status {
+    display: inline-block;
+    margin: 0 0 0 15px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 18px;
+    cursor: pointer;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 30px 0;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    .disciplines {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content {
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 4px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+}

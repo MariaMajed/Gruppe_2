@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Webdesign-Projekt über den Ironman Triathlon.">
+    <meta name="author"
+          content="Merlin Jupe">
+
+    <title>Ironman | Swim. Bike. Run.</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="top">
+
+    <a class="skip-link" href="#main-content">
+        Direkt zum Inhalt
+    </a>
+
+
+    <header>
+        <div class="container header-content">
+
+            <a class="logo" href="index.html">
+                IRONMAN
+            </a>
+
+            <nav aria-label="Hauptnavigation">
+                <ul>
+                    <li><a href="#about">Ironman</a></li>
+                    <li><a href="#disciplines">Disziplinen</a></li>
+                    <li><a href="#media">Training</a></li>
+                    <li><a href="#race">Race</a></li>
+                    <li><a href="#download">PDF</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <video
+                id="heroVideo"
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                aria-hidden="true">
+
+                <source
+                    src="assets/video/schwimmen_horiz.webm"
+                    type="video/webm">
+
+                <source
+                    src="assets/video/schwimmen_horiz.mp4"
+                    type="video/mp4">
+
+                <source
+                    src="assets/video/schwimmen_horiz.mov"
+                    type="video/quicktime">
+
+                Dein Browser unterstützt das Videoelement nicht.
+            </video>
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <p class="eyebrow">
+                    SWIM · BIKE · RUN
+                </p>
+
+                <h1>Ironman</h1>
+
+                <p>
+                    Drei Disziplinen. 226 Kilometer.
+                    Eine Herausforderung.
+                </p>
+
+                <a class="button" href="#about">
+                    Mehr erfahren
+                </a>
+
+                <button id="videoButton" type="button">
+                    Video pausieren
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- IRONMAN -->
+        <section id="about">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    DIE HERAUSFORDERUNG
+                </p>
+
+                <h2>Was ist ein Ironman?</h2>
+
+                <p>
+                    Ein Ironman ist ein Triathlon über insgesamt
+                    etwa 226 Kilometer. Der Wettkampf besteht aus
+                    Schwimmen, Radfahren und Laufen. </br>
+
+                    Zwischen den drei Disziplinen befinden sich
+                    zwei Wechselzonen.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DISZIPLINEN -->
+        <section id="disciplines" class="section-light">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    SWIM · BIKE · RUN
+                </p>
+
+                <h2>Die drei Disziplinen</h2>
+
+                <ol class="disciplines">
+
+                    <li class="discipline-card">
+                        <figure>
+                            <img src="assets/images/swim.jpg"
+                                alt="Schwimmer beim Kraulschwimmen">
+
+                            <figcaption>
+                                Der Wettkampf beginnt mit dem Schwimmen.
+                            </figcaption>
+                        </figure>
+
+                        <h3>Schwimmen <span>3,8 km</span></h3>
+                    </li>
+
+                    <li class="discipline-card">
+                        <figure>
+                            <img src="assets/images/bike.jpg"
+                                alt="Triathlet auf dem Rennrad">
+
+                            <figcaption>
+                                Die längste Disziplin des Ironman.
+                            </figcaption>
+                        </figure>
+
+                        <h3>Radfahren <span>180 km</span></h3>
+                    </li>
+
+                    <li class="discipline-card">
+                        <figure>
+                            <img src="assets/images/run.jpg"
+                                alt="Triathlet beim Laufen">
+
+                            <figcaption>
+                                Den Abschluss bildet ein Marathon.
+                            </figcaption>
+                        </figure>
+
+                        <h3>Laufen <span>42,2 km</span></h3>
+                    </li>
+
+                </ol>
+
+
+                <!-- SVG -->
+                <figure class="svg-container">
+
+                    <svg
+                        viewBox="0 0 800 120"
+                        role="img"
+                        aria-labelledby="svg-title svg-description"
+                        xmlns="http://www.w3.org/2000/svg">
+
+                        <title id="svg-title">
+                            Die drei Ironman Disziplinen
+                        </title>
+
+                        <desc id="svg-description">
+                            Darstellung der Distanzen für Schwimmen,
+                            Radfahren und Laufen.
+                        </desc>
+
+                        <line
+                            x1="100"
+                            y1="60"
+                            x2="700"
+                            y2="60"
+                            class="svg-line">
+
+                        </line>
+
+                        <circle
+                            cx="100"
+                            cy="60"
+                            r="35"
+                            class="svg-swim">
+
+                        </circle>
+
+                        <circle
+                            cx="400"
+                            cy="60"
+                            r="35"
+                            class="svg-bike">
+
+                        </circle>
+
+                        <circle
+                            cx="700"
+                            cy="60"
+                            r="35"
+                            class="svg-run">
+
+                        </circle>
+
+                        <text x="100" y="65">3,8 km</text>
+                        <text x="400" y="65">180 km</text>
+                        <text x="700" y="65">42,2 km</text>
+
+                    </svg>
+
+                    <figcaption>
+                        Im Durchschnitt dauert ein Ironman etwa 9 bis 17 Stunden.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+        <!-- AUDIO -->
+        <section id="media">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    MEIN TRAINING
+                </p>
+
+                <h2>Training erleben</h2>
+
+                <div class="media-grid">
+
+                    <article>
+
+                        <h3>Sounds beim Laufen</h3>
+
+                        <audio controls>
+
+                            <source
+                                src="assets/audio/laufen.mp3"
+                                type="audio/mpeg">
+
+                            Dein Browser unterstützt das Audioelement nicht.
+
+                        </audio>
+
+                        <p>
+                            Eigene Audioaufnahme während eines Lauftrainings.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CANVAS -->
+        <section id="race" class="section-light">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    INTERAKTIV
+                </p>
+
+                <h2>Race Simulation</h2>
+
+                <p>
+                    Starte die Simulation und verfolge
+                    den Rennfortschritt.
+                </p>
+
+                <canvas
+                    id="raceCanvas"
+                    width="1200"
+                    height="200">
+
+                    Dein Browser unterstützt Canvas nicht.
+
+                </canvas>
+                
+                <button id="startRace" type="button">
+                    Race starten
+                </button>
+                <button id="resetRace" type="button">
+                    Race zurücksetzen
+                </button>
+
+                <p class="race-status" id="raceStatus" aria-live="polite">
+                    Bereit für den Start.
+                </p>
+                
+
+            </div>
+
+        </section>
+
+
+        <!-- PDF -->
+        <section id="download">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    IRONMAN GUIDE
+                </p>
+
+                <h2>Weitere Informationen</h2>
+
+                <p>
+                    Weitere Informationen befinden sich
+                    in meinem selbst erstellten PDF-Dokument.
+                </p>
+
+                <a
+                    class="button"
+                    href="assets/pdf/Ironman.pdf"
+                    download>
+
+                    PDF herunterladen
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                Webdesign Projekt · Ironman
+            </p>
+
+            <a href="#top">
+                Nach oben ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/canvas.js"></script>
+    <script src="js/interactions.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,507 @@
+:root {
+    --accent: #D65A3A;
+    --black: #000000;
+    --white: #ffffff;
+    --nori: #202020;
+    --text-muted: #ffffffc7;
+    --nav-background: #00000080;
+    --border-light: #ffffff2e;
+    --border-medium: #ffffff73;
+    --border-strong: #ffffffb3;
+    --surface-light: #ffffff08;
+}
+
+
+/* ==================== BASIS ==================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+footer {
+    text-align: center;
+}
+
+audio {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+article {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1.35fr);
+    column-gap: clamp(30px, 7vw, 100px);
+}
+
+
+/* ==================== TEXTE ==================== */
+
+h2,
+h3,
+h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+h3,
+h4 {
+    font-weight: 700;
+}
+
+h3 {
+    color: var(--accent);
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    padding-left: 22px;
+    margin: 8px 0 24px;
+}
+
+li {
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+ol {
+    margin: 15px 0;
+    padding-left: 42px;
+}
+
+ol li {
+    padding: 0 0 15px 8px;
+}
+
+dt {
+    margin-top: 5px;
+}
+
+a {
+    color: var(--white);
+    margin-right: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+
+/* ==================== HEADER / NAVIGATION ==================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    background: var(--nav-background);
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.nav-logo {
+    position: absolute;
+    top: 8px;
+    left: 24px;
+    width: 58px;
+    height: 58px;
+    z-index: 1;
+}
+
+.nav-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.pdf-download {
+    max-width: 120px;
+    display: inline-block;
+    border-radius: 12px;
+    text-decoration: underline;
+}
+
+.pdf-download:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ==================== ALLGEMEINE SECTIONS ==================== */
+
+.sushi-section {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 auto;
+    min-height: 100svh;
+    padding: 80px 80px 40px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.sushititle {
+    margin-left: 120px;
+}
+
+
+/* ==================== HOME ==================== */
+
+#home-text {
+    flex: 1 1 420px;
+    max-width: 500px;
+    height: 300px;
+    margin: 20px 20px 20px 60px;
+    padding: 20px;
+    overflow-wrap: break-word;
+}
+
+#home {
+    background-image: url(../assets/images/sushi.jpg);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 25%;
+}
+
+#home h1 {
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.1;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+#home p {
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+
+/* ==================== SUSHI ==================== */
+
+.sushi-image {
+    position: relative;
+    flex: 0 0 440px;
+    width: min(100%, 500px);
+    max-width: 500px;
+    z-index: 1;
+}
+
+.sushi-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.sushi-text {
+    flex: 1 1 420px;
+    margin-right: 60px;
+}
+
+.reveal {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.reveal-left {
+    transform: translateX(-150px);
+}
+
+#sushi {
+    overflow: hidden;
+    gap: 60px;
+    padding-top: 200px;
+}
+
+
+/* ==================== SUSHISORTEN ==================== */
+
+#sorten-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.sortenbox {
+    display: flex;
+    flex-direction: column;
+    width: min(1000px, 100%);
+    min-height: 260px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-medium);
+    border-radius: 18px;
+    background: var(--surface-light);
+}
+
+.sortenbox > h3 {
+    margin: 0;
+    font-size: 1.7rem;
+}
+
+.sortenbox-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.sortenbox figure {
+    flex: 0 0 300px;
+    height: 220px;
+    margin: 5px 0;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.sortenbox img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.sorten-content {
+    flex: 1;
+}
+
+.sorten-content p,
+.sorten-content ul {
+    margin: 0;
+}
+
+.sortenbox:hover {
+    transform: translateX(6px);
+    border-color: var(--border-strong);
+}
+
+#sushisorten {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* ==================== ZUBEREITUNG ==================== */
+
+.zubereitung-sektion {
+    position: relative;
+    width: min(1120px, 100%);
+    margin: 28px auto 0;
+}
+
+#schritte-bereich {
+    padding-left: clamp(24px, 4vw, 42px);
+    border-left: 1px solid var(--border-light);
+}
+
+.zubereitung-sektion:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "video"
+        "text";
+    gap: 20px;
+    align-items: start;
+}
+
+.zubereitung-sektion:nth-of-type(2) {
+    padding: 32px 0 12px;
+    border-top: 1px solid var(--border-light);
+}
+
+.zubereitung-sektion:first-of-type > p {
+    grid-area: text;
+    padding-left: 22px;
+    border-left: 3px solid var(--accent);
+}
+
+#zubereitung {
+    flex-direction: column;
+}
+
+#zubereitung figure video {
+    width: min(80%, 700px);
+    height: 360px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+#zubereitung video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+
+/* ==================== CANVAS ==================== */
+
+.canvas {
+    position: relative;
+    display: block;
+}
+
+#sushi-maker {
+    flex-direction: column;
+}
+
+canvas {
+    width: 300px;
+    height: 300px;
+}
+
+
+/* ==================== BUTTONS ==================== */
+
+button {
+    width: 150px;
+    height: 30px;
+    margin: 5px 60px;
+}
+
+/*===================== FOOTER ====================*/
+
+footer {
+    border-top: 1px solid var(--border-light);
+    padding: 8px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==================== MOBILE ==================== */
+
+@media (max-width: 760px) {
+
+    nav {
+        width: calc(100% - 20px);
+        padding: 8px 10px;
+    }
+
+    nav ul {
+        gap: 10px 14px;
+    }
+
+    a {
+        margin-right: 0;
+        font-size: 0.9rem;
+    }
+
+    .nav-logo {
+        top: 6px;
+        left: 10px;
+        width: 44px;
+        height: 44px;
+    }
+
+    #home,
+    #sushi,
+    #zubereitung,
+    #sushisorten,
+    #sushi-maker {
+        min-height: 100svh;
+        padding-top: 110px;
+        gap: 20px;
+    }
+
+    #home {
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+    #zubereitung {
+        align-items: stretch;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    #zubereitung > .zubereitung-sektion:first-of-type {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    #zubereitung figure {
+        height: 360px;
+    }
+
+    #zubereitung article {
+        display: block;
+    }
+
+    #zubereitung .schritte-bereich {
+        margin-top: 28px;
+        padding: 24px 0 0;
+        border-top: 1px solid var(--border-light);
+        border-left: 0;
+    }
+
+    #zubereitung article h3,
+    #zubereitung article h4 {
+        margin: 24px 0 8px;
+    }
+
+    #zubereitung article ul {
+        margin: 0 0 22px;
+    }
+
+    #zubereitung article ol {
+        margin-top: 28px;
+        padding-left: 34px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border-light);
+        border-left: 0;
+    }
+}

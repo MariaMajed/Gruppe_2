@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 240" role="img" aria-labelledby="title">
+	<title id="title">Ein Lachs-Maki</title>
+
+    <!-- Weißer Kreis -->
+	<circle cx="332" cy="112" r="112" fill="#ffffff" opacity="1"/>
+
+	<g transform="translate(250 24)">
+		<!-- Seitenfläche des Sushi -->
+		<path d="M0 48v76c0 24 38 43 82 43s82-19 82-43V48Z" fill="#010303"/>
+		<path d="M0 112v12c0 24 38 43 82 43s82-19 82-43v-12c-12 20-43 33-82 33S12 132 0 112Z" fill="#010303"/>
+
+		<!-- Oberseite des Sushi -->
+		<ellipse cx="82" cy="48" rx="82" ry="38" fill="#010303"/>
+		<ellipse cx="82" cy="48" rx="62" ry="27" fill="#e9e6df"/>
+		<ellipse cx="82" cy="48" rx="35" ry="17" fill="#e86b48"/>
+		<path d="M60 43c14-8 29-8 44 0M57 51c16-8 34-8 50 0" fill="none" stroke="#ffb17c" stroke-width="4" stroke-linecap="round"/>
+	</g>
+</svg>

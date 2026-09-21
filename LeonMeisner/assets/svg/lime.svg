@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 200 200">
+
+    <g opacity="0.5" transform="rotate(45 100 100)">
+
+        <path d="M20 100 A80 80 0 0 1 180 100 L20 100 Z"
+              fill="#4E8F2C" />
+
+        <path d="M28 100 A72 72 0 0 1 172 100 L28 100 Z"
+              fill="#9EDB52" />
+
+        <path d="M40 100 A60 60 0 0 1 160 100 L40 100 Z"
+              fill="#E9F8A9" />
+
+        <line x1="100" y1="100" x2="51.5" y2="72"
+              stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+        <line x1="100" y1="100" x2="72" y2="51.5"
+              stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+        <line x1="100" y1="100" x2="100" y2="44"
+              stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+        <line x1="100" y1="100" x2="128" y2="51.5"
+              stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+        <line x1="100" y1="100" x2="148.5" y2="72"
+              stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+        <line x1="20" y1="100" x2="180" y2="100"
+              stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+    </g>
+
+</svg>

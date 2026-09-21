@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Plätzchen-Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plaetzchen Rezept Manager">
+    <meta name="keywords" content="Plaetzchen, Rezepte, Zutaten">
+    <meta name="author" content="Maximilian Steyer">
+    <meta name="robots" content="no-index">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="javascript/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Einführung -->
+    <div id="introOverlay" role="dialog" aria-modal="true">
+        <div class="intro-layout">
+            <div class="intro-text">
+                <p>Jedes Jahr backt die Familie Plätzchen</p>
+                <p>Im Video ist zu sehen, wie viele Plätzchen gebacken werden</p>
+                <p>Da das sehr viele sind verschiedene Rezepte sind, kommt es immer zu Durcheinander</p>
+                <p>Daher habe ich eine Plätzchen-Manager Seite erstellt</p>
+                <p>Diese wird im kommenden November erstmals eingesetzt werden</p>
+            </div>
+            <div class="intro-center">
+                <h2 class="intro-header">Einleitung zum Plätzchen-Manager</h2>
+                <video id="introVideo" autoplay muted playsinline aria-label="Introvideo">
+                    <source src="assets/Video/Video.mp4" type="video/mp4">
+                    <source src="assets/Video/Video.ogg" type="video/ogg">
+                    <source src="assets/Video/Video.WebM" type="video/webm">
+                </video>
+                <button id="intro-Button" aria-label="Starten">
+                    <span class="intro-mark">Klicke zum Starten</span>
+                </button>
+            </div>
+            <div class="intro-text">
+                <p>Der Plätzchen-Manager gibt eine Übersicht über aller Plätzchen</p>
+                <p>Zu jedem Plätzchen können die Zutaten und das Rezept eingesehen und bearbeitet werden</p>
+                <p>Die Seite speichert außerdem alle Zutaten und visualisiert, wie viel von jeder Zutat noch verfügbar ist</p>
+                <p>Sollte es zu Problemen kommen, kann man ein PDF herunterladen, in dem alle Plätzchen mit ihren Zutaten aufgelistet sind </p>
+                <p>Die eingetragenen Daten basieren auf den Rezepten des letztens Jahres</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="sound" aria-label="Soundeffekt">
+        <source src="assets/Audio/Knusper.mp3" type="audio/mp3">
+        <source src="assets/Audio/Knusper.mp4" type="audio/mp4">
+        <source src="assets/Audio/Knusper.ogg" type="audio/ogg">
+    </audio>
+
+    <!-- Header -->
+    <header>
+        <div class="header-inner">
+            <a class="icon" href="#uebersicht" onclick="playSound()">
+                <img class="cookie-icon" src="assets/svg/cookie.svg" alt="Plätzchen Icon">
+                <span>Plätzchen-Manager</span>
+            </a>
+            <nav aria-label="Hauptnavigation">
+                <ul>
+                    <li><a href="#uebersicht">Übersicht</a></li>
+                    <li><a href="#rezept-titel">Rezept</a></li>
+                    <li><a href="#zutaten">Zutaten</a></li>
+                    <li><a href="#aussicht">Aussicht</a></li>
+                    <li><a href="#" class="nav-pdf" onclick="generatePDF()">PDF drucken</a></li>
+                    <li><a href="assets/pdf/Plaetzchen_Liste_2025.pdf" class="nav-pdf" download="Plaetzchen_Liste_2025.pdf">Plätzchen Liste 2025</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Abschnitt 1: Übersicht -->
+        <section class="section-uebersicht">
+            <div class="section-head">
+                <h2 id="uebersicht">Die Backliste</h2>
+                <p class="section-text">Jede Karte ist ein Plätzchen aus der Familienbäckerei. Status setzen, Rezept öffnen oder ein neues Gebäck hinzufügen.</p>
+            </div>
+
+            <div class="plaetzchenContainer" id="plaetzchenContainer">
+
+                <figure class="cookie-card">
+                    <figcaption>Zimtsterne</figcaption>
+                    <a href="#rezept-titel" class="cookie-link" onclick="selectPlaetzchen('Zimtsterne')">
+                        <img src="assets/Images/zimtsterne.jpg" alt="Zimtsterne">
+                    </a>
+                    <select class="cookie-status-select" onchange="updateStatus('Zimtsterne', this.value)">
+                        <option selected>Noch nicht angefangen</option>
+                        <option>In Arbeit</option>
+                        <option>Fast fertig</option>
+                        <option>Fertig</option>
+                        <option>Favorit</option>
+                    </select>
+                     <button class="remove-btn" type="button" onclick="removePlaetzchen('Zimtsterne')">
+                        Entfernen
+                    </button>
+                </figure>
+
+                <figure class="cookie-card" onclick="openPlaetzchenPopup()">
+                    <figcaption>Neues Plätzchen</figcaption>
+                    <a class="cookie-link">
+                        <img src="assets/Images/plus.png" alt="Neues Plätzchen hinzufügen">
+                    </a>
+                    <select class="cookie-select" disabled style="visibility:hidden;">
+                        <option>—</option>
+                    </select>
+                    <button class="remove-btn" disabled style="visibility:hidden;">Entfernen</button>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Abschnitt 2: Rezept -->
+        <section class="section-rezept">
+            <article class="rezept-block rezept-header-block">
+                <div class="section-head">
+                    <h2 id="rezept-titel">Rezepttitel</h2>
+                </div>
+
+                <div class="rezept-status-row">
+                    <select id="rezept-status" onchange="updateStatus(aktuellesPlaetzchen.name, this.value)"></select>
+
+                    <svg id="fav-icon" class="stern-icon" width="26" height="26" viewBox="0 0 24 24"
+                        onclick="setFavorit()" role="button" aria-label="Als Favorit markieren">
+                        <polygon
+                            points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"
+                            fill="#ddc9a3" />
+                    </svg>
+
+                    <button class="btn-solid" onclick="openRezeptPopup()">Rezept bearbeiten</button>
+                </div>
+            </article>
+
+            <div class="rezept-block">
+                <h3 class="rezept-block-label">Zutaten</h3>
+                <ul id="rezept-zutaten" class="zutaten-liste"></ul>
+            </div>
+
+            <div class="rezept-block">
+                <h3 class="rezept-block-label">Zubereitung</h3>
+                <div id="rezept-anweisungen"></div>
+            </div>
+
+        </section>
+
+        <!-- Abschnitt 3: Zutatenbestand -->
+        <section class="section-zutaten">
+            <div class="section-head">
+                <h2 id="zutaten">Vorratskammer</h2>
+                <p class="section-text">So viel liegt aktuell im Vorrat. Beim Backen sinkt der Bestand automatisch.</p>
+            </div>
+
+            <div class="chart-frame">
+                <canvas id="zutatenCanvas" width="600" height="300"></canvas>
+            </div>
+
+            <div class="zutaten-buttons">
+                <button class="btn-solid" onclick="openZutatenPopup()">Zutaten bearbeiten</button>
+                <button class="btn-solid" onclick="openCreateZutatPopup()">Zutat hinzufügen</button>
+            </div>
+        </section>
+
+        <!-- Abschnitt 4: Aussicht -->
+        <section class="section-aussicht">
+            <div class="section-head">
+                <h2 id="aussicht">Aussichten für die Zukunft</h2>
+                    <ol class="section-text">
+                        <li>Datenbank anbiendung, damit mehrere Leute parallel arbeiten können.</li>
+                        <li>Anpassung der Benutzeroberfläche für Mobilegeräte.</li>
+                        <li>Button am Ende des Rezept-Bearbeiten-Popups der das Rezept multipliziert. Das Rezept wird mehrfach gemacht.</li>
+                        <li>Button am Ende des Rezept-Bearbeiten-Popups, mit dessen bestätigung, alle für das Rezept benötigten Zutaten automatisch zum Vorrat hinzugefügt werden.</li>
+                        <li>"Sind sie sich sicher?" Popup vor dem Löschen von Zutaten/Plätzchen.</li>
+                    </ol>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup-Fenster: Plaetzchen Hinzufügen -->
+    <div id="plaetzchenPopup" class="popup">
+        <div class="popup-content">
+            <h2>Neues Plätzchen hinzufügen</h2>
+            <label for="popupNameInput">Name des Plätzchens</label>
+            <input id="popupNameInput" placeholder="z. B. Kokosbusserl">
+            <label for="popupBildInput">Bild-URL</label>
+            <input id="popupBildInput" placeholder="assets/Images/dein-bild.jpg">
+            <div class="popup-buttons">
+                <button class="btn-solid" onclick="addPlaetzchenFromPopup()">Hinzufügen</button>
+                <button class="btn-outline" onclick="closePopup()">Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup-Fenster: Rezept bearbeiten-->
+    <div id="rezeptBearbeitenZuatetenSelectPopup" class="popup">
+        <div class="popup-content">
+            <span class="popup-step">Schritt 1 von 3</span>
+            <h2>Zutaten auswählen</h2>
+
+            <h3 class="popup-subhead">Welche Zutaten gehören in dieses Rezept?</h3>
+            <div id="zutatCheckboxListe" class="checkbox-list"></div>
+
+            <div class="popup-buttons">
+                <button class="btn-solid" onclick="rezeptBearbeitenZutatenSelect()">Weiter</button>
+                <button class="btn-outline" onclick="closePopup()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="rezeptBearbeitenZutatenMengenPopup" class="popup">
+        <div class="popup-content">
+            <span class="popup-step">Schritt 2 von 3</span>
+            <h2>Mengen festlegen</h2>
+
+            <h3 class="popup-subhead">Wie viel wird von jeder Zutat gebraucht?</h3>
+            <div id="zutatMengenListe" class="mengen-list"></div>
+
+            <div class="popup-buttons">
+                <button class="btn-solid" onclick="rezeptBearbeitenZutatenMengen()">Weiter</button>
+                <button class="btn-outline" onclick="closePopup()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="rezeptBearbeitenAnweisungenPopup" class="popup">
+        <div class="popup-content">
+            <span class="popup-step">Schritt 3 von 3</span>
+            <h2>Zubereitung schreiben</h2>
+
+            <h3 class="popup-subhead">Jede Anweisung in eine neue Zeile</h3>
+            <textarea id="anweisungenInput" placeholder="Teig kneten.&#10;Kipferl formen.&#10;Bei 180°C backen."></textarea>
+
+            <div class="popup-buttons">
+                <button class="btn-solid" onclick="rezeptBearbeitenAnweisungen()">Speichern</button>
+                <button class="btn-outline" onclick="closePopup()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup-Fenster: Zutatenbestand bearbeiten -->
+    <div id="zutatenPopup" class="popup">
+        <div class="popup-content">
+            <h2>Zutaten bearbeiten</h2>
+
+            <label for="popupZutatSelect">Zutat auswählen</label>
+            <select id="popupZutatSelect"></select>
+
+            <label for="popupMengeInput">Menge (in g)</label>
+            <input type="number" id="popupMengeInput">
+
+            <div class="popup-buttons">
+                <button class="btn-solid" onclick="addZutat()">Hinzufügen</button>
+                <button class="btn-outline" onclick="removeZutat()">Entfernen</button>
+            </div>
+
+            <button class="popup-close" onclick="closePopup()">Schließen</button>
+        </div>
+    </div>
+
+    <!-- Popup-Fenster: Zutat Hinzufügen -->
+    <div id="createZutatPopup" class="popup">
+        <div class="popup-content">
+            <h2>Neue Zutat anlegen</h2>
+            <label for="createZutatNameInput">Name der Zutat</label>
+            <input id="createZutatNameInput" placeholder="z. B. Kokosraspeln">
+            <label for="createZutatMengeInput">Menge</label>
+            <input id="createZutatMengeInput" type="number" placeholder="0">
+            <label for="createZutatMasseinheitSelect">Maßeinheit</label>
+            <select id="createZutatMasseinheitSelect">
+                <option value="g">Gramm</option>
+                <option value="l">Liter</option>
+                <option value="esslöffel">Esslöffel</option>
+                <option value="teelöffel">Teelöffel</option>
+                <option value="Stücke">Stücke</option>
+                <option value="Packungen">Packungen</option>
+            </select>
+            <div class="popup-buttons">
+                <button class="btn-solid" onclick="createZutat()">Hinzufügen</button>
+                <button class="btn-outline" onclick="closePopup()">Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Maximilian Steyer Webdesign und Standards</p>
+    </footer>
+
+</body>
+</html>

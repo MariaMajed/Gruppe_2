@@ -1,0 +1,715 @@
+/* Farben / Grundeinstellungen */
+
+.site-title {
+    margin: 0;
+    font-size: inherit;
+}
+
+:root {
+    --bg: #100a18;
+    --header-bg: rgba(22, 13, 33, 0.95);
+
+    --card: #1d122a;
+    --card-hover: #291a3d;
+
+    --border: #352348;
+    --purple: #b98cff;
+
+    --text: #ffffff;
+    --text-muted: #cfc4db;
+
+    --gold: #f5c84c;
+    --silver: #a8a9ad;
+    --bronze: #cd7f32;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+
+/* Sticky Header */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    width: min(92%, 1700px);
+    margin: 0 auto;
+    padding: 18px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.brand {
+    color: var(--text);
+
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    font-weight: bold;
+
+    text-decoration: none;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: clamp(18px, 2vw, 32px);
+
+    list-style: none;
+}
+
+.nav-list a {
+    color: var(--text-muted);
+
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        text-shadow 0.2s ease;
+}
+
+.nav-list a:hover {
+    color: var(--purple);
+
+    text-shadow:
+        0 0 10px rgba(185, 140, 255, 0.4);
+}
+
+
+/* Allgemeine Sections */
+
+.section {
+    width: min(92%, 1700px);
+    margin: 0 auto;
+
+    padding-top: clamp(70px, 6vw, 110px);
+    padding-bottom: clamp(70px, 6vw, 110px);
+
+    scroll-margin-top: 100px;
+}
+
+/* Nur die Hauptüberschriften der Sections */
+.section > h2 {
+    margin-top: 0;
+    margin-bottom: clamp(30px, 3vw, 45px);
+
+    font-size: clamp(1.5rem, 2vw, 2rem);
+
+    text-align: center;
+}
+
+
+/* Top 3 */
+
+#top3 h2 {
+    margin-bottom: clamp(35px, 4vw, 60px);
+}
+
+.top3 {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    gap: clamp(35px, 4vw, 80px);
+}
+
+
+/* Ranking Cards */
+
+.ranking-card {
+    padding: clamp(20px, 1.8vw, 30px);
+
+    background-color: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.ranking-card:hover {
+    transform: translateY(-6px);
+
+    background-color: var(--card-hover);
+
+    box-shadow:
+        0 10px 30px rgba(185, 140, 255, 0.18);
+}
+
+.ranking-card:hover .can-image {
+    transform: scale(1.05);
+}
+
+
+/* Top 3 Cards */
+
+.first-place {
+    width: clamp(360px, 22vw, 440px);
+    min-height: clamp(430px, 31vw, 520px);
+
+    border-color: var(--purple);
+
+    box-shadow:
+        0 0 35px rgba(185, 140, 255, 0.15);
+}
+
+.second-place {
+    width: clamp(310px, 19vw, 390px);
+    min-height: clamp(370px, 27vw, 460px);
+}
+
+.third-place {
+    width: clamp(280px, 17vw, 350px);
+    min-height: clamp(330px, 24vw, 420px);
+}
+
+
+/* Bilder der Top 3 */
+
+.first-place .can-image {
+    height: clamp(230px, 15vw, 280px);
+}
+
+.second-place .can-image {
+    height: clamp(205px, 13vw, 245px);
+}
+
+.third-place .can-image {
+    height: clamp(180px, 11vw, 215px);
+}
+
+
+/* Platznummern */
+
+.place,
+.place1,
+.place2,
+.place3 {
+    margin-top: 0;
+
+    font-weight: bold;
+}
+
+.place {
+    color: var(--purple);
+
+    font-size: clamp(1.4rem, 1.7vw, 1.8rem);
+}
+
+.place1 {
+    color: #f1cd89;
+
+    font-size: clamp(1.8rem, 2vw, 2.2rem);
+}
+
+.place2 {
+    color: var(--silver);
+
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+}
+
+.place3 {
+    color: var(--bronze);
+
+    font-size: clamp(1.4rem, 1.6vw, 1.8rem);
+}
+
+
+/* Komplettes Ranking */
+
+.ranking-grid {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: clamp(25px, 2.5vw, 50px);
+}
+
+
+/* Dosenbilder */
+
+.can-image {
+    display: block;
+
+    height: clamp(170px, 12vw, 210px);
+    max-width: 100%;
+
+    margin:
+        15px auto
+        clamp(20px, 2vw, 30px);
+
+    object-fit: contain;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* Red Bull als Dekoration */
+
+.media-grid {
+    width: 80%;
+    max-width: 1300px;
+
+    margin:
+        clamp(30px, 3vw, 45px)
+        auto
+        0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: clamp(20px, 2vw, 35px);
+}
+
+.media-card {
+    margin: 0;
+
+    background-color: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.media-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(185, 140, 255, 0.12);
+}
+
+.media-card img,
+.media-card video {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 9 / 16;
+
+    object-fit: cover;
+}
+
+.media-card figcaption {
+    min-height: 90px;
+
+    padding: 28px 20px 20px;
+
+    color: var(--text-muted);
+
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    line-height: 1.4;
+}
+
+/* Audio und PDF */
+
+.audio-section,
+.pdf-section {
+    width: 80%;
+    max-width: 1300px;
+
+    margin:
+        clamp(45px, 5vw, 75px)
+        auto
+        0;
+
+    padding: 0;
+}
+
+
+/* Überschriften */
+
+.audio-section h3,
+.pdf-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+
+    text-align: center;
+}
+
+
+/* Karten */
+
+.audio-card,
+.pdf-card {
+    width: 100%;
+    min-height: 150px;
+
+    padding: clamp(22px, 2.5vw, 35px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+
+/* Buttons */
+
+.audio-button,
+.pdf-button {
+    padding:
+        14px
+        clamp(18px, 2vw, 28px);
+
+    color: var(--text);
+    background-color: var(--card-hover);
+
+    border: 1px solid var(--purple);
+    border-radius: 12px;
+
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    font-weight: bold;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.audio-button:hover,
+.pdf-button:hover {
+    background-color: var(--border);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(185, 140, 255, 0.18);
+}
+
+
+/* Sterne / selbst erzeugtes SVG */
+
+.rating {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(4px, 0.4vw, 7px);
+
+    margin-top: 18px;
+
+    white-space: nowrap;
+}
+
+.rating img {
+    display: block;
+
+    width: clamp(18px, 1.4vw, 23px);
+    height: clamp(18px, 1.4vw, 23px);
+}
+
+.rating-value {
+    margin-left: clamp(5px, 0.7vw, 10px);
+
+    color: var(--gold);
+
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    font-weight: bold;
+}
+
+
+/* Canvas */
+
+.section-description {
+    max-width: 750px;
+
+    margin:
+        0 auto
+        clamp(20px, 2vw, 30px);
+
+    color: var(--text-muted);
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+.canvas-container {
+    width: 78%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: clamp(20px, 3vw, 40px);
+
+    background-color: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+#ratingCanvas {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+}
+
+
+/* Mittlere Bildschirme */
+
+@media screen and (max-width: 1200px) {
+
+    .ranking-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .top3 {
+        gap: clamp(25px, 3vw, 45px);
+    }
+
+    .first-place {
+        width: 34%;
+    }
+
+    .second-place {
+        width: 30%;
+    }
+
+    .third-place {
+        width: 27%;
+    }
+
+    .media-grid {
+        width: 88%;
+    }
+
+    .audio-section,
+    .pdf-section {
+        width: 88%;
+    }
+
+    .canvas-container {
+        width: 85%;
+    }
+}
+
+
+/* Tablets */
+
+@media screen and (max-width: 850px) {
+
+    .header-inner {
+        padding: 14px 0;
+
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .section {
+        width: min(94%, 750px);
+
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .ranking-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .top3 {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 25px;
+    }
+
+    .first-place,
+    .second-place,
+    .third-place {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .first-place {
+        order: 1;
+    }
+
+    .second-place {
+        order: 2;
+    }
+
+    .third-place {
+        order: 3;
+    }
+
+    .first-place .can-image,
+    .second-place .can-image,
+    .third-place .can-image {
+        height: clamp(190px, 35vw, 250px);
+    }
+
+    .media-grid {
+        width: 85%;
+
+        grid-template-columns: 1fr;
+    }
+
+    .media-card {
+        width: 100%;
+        max-width: 500px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .audio-section,
+    .pdf-section {
+        width: 85%;
+    }
+
+    .canvas-container {
+        width: 95%;
+    }
+}
+
+
+/* Smartphones */
+
+@media screen and (max-width: 520px) {
+
+    .header-inner {
+        width: 92%;
+    }
+
+    .brand {
+        text-align: center;
+    }
+
+    .nav-list {
+        gap: 10px 14px;
+    }
+
+    .nav-list a {
+        font-size: 0.85rem;
+    }
+
+    .section {
+        width: 92%;
+
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .ranking-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ranking-card {
+        padding: 22px;
+    }
+
+    .can-image {
+        height: 190px;
+    }
+
+    .rating {
+        flex-wrap: wrap;
+
+        white-space: normal;
+    }
+
+    .media-grid {
+        width: 100%;
+    }
+
+    .media-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .audio-section,
+    .pdf-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .audio-button {
+        width: 100%;
+    }
+
+    .canvas-container {
+        width: 100%;
+
+        padding: 16px;
+    }
+}
